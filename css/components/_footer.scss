@@ -1,0 +1,22 @@
+#footer{
+  #footer-body{
+    .left{
+      img{
+        width: 90px;
+      }
+    }
+    .right{
+      .social{
+        a{
+          font-size:20px;
+        }
+      }
+    }
+  }
+  #footer-terms{
+    font-size: 12px;
+    border-top:1px solid $bravo;
+    padding-top:22px;
+    padding-bottom:22px;
+  }
+}

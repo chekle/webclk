@@ -1,0 +1,97 @@
+<?php
+/**
+ * @package WordPress
+ * @subpackage Default_Theme
+ */
+
+/* ================== Scripts/Styles ======================== */
+
+function meta_resources() {
+  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/libraries/bootstrap.min.css');
+  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/libraries/all.min.css');
+  wp_enqueue_style('style', get_stylesheet_uri());
+  wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.1.0', true );
+  wp_enqueue_script( 'webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', array('jquery'), '1.6.26', true );
+  wp_enqueue_script( 'meta-js', get_template_directory_uri() . '/js/meta.js', array('jquery'), '1', true );
+}
+add_action('wp_enqueue_scripts', 'meta_resources');
+
+// Add title tag to header
+add_theme_support( 'title-tag' );
+
+/* ================== Admin layouts ======================== */
+
+/* Move Yoast to bottom */
+function yoasttobottom() {
+  return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
+/* Disable XML-RPC */
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
+/* Enable Thumbnail Support */
+add_theme_support( 'post-thumbnails' );
+
+// Remove comments from admin bar
+function my_admin_bar_render() {
+  global $wp_admin_bar;
+  $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'my_admin_bar_render' );
+
+/* ================== Menus ======================== */
+
+/* Add Menus */
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'main-menu' => __( 'Main Menu' ),
+      'footer-menu' => __( 'Footer Menu' ),
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );
+
+/* Add Wrappers for Sub Menus */
+class megaMenu extends Walker_Nav_Menu {
+	// add classes to ul sub-menus
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		// depth dependent classes
+		$indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
+		$display_depth = ( $depth + 1); // because it counts the first submenu as 0
+		$classes = array(
+			'sub-menu',
+			'menu-depth-' . $display_depth
+		);
+		$class_names = implode( ' ', $classes );
+
+		// build html
+		if ($display_depth == 1) {
+			$output .= "\n" . $indent . '
+			<div class="sub-menu-wrap">
+				<div class="container">
+					<div class="row">
+						<ul class="' . $class_names . ' col-12">' . "\n";
+		} else {
+			$output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
+		}
+	}
+}
+
+/* ================== ACF ======================== */
+
+/* Add ACF Options Page */
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title'    => 'Theme Options',
+		'menu_title'    => 'Theme Options',
+		'menu_slug'     => 'theme-options',
+		'icon_url'      => 'dashicons-admin-generic',
+		'position'      => 6,
+		'capability'    => 'edit_posts',
+		'redirect'      => false
+	));
+}
+
+?>
