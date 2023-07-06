@@ -1,5 +1,20 @@
 /* Mobile Nav
 ==============================*/
+#offcanvasMobileMenu{
+  .offcanvas-header{
+    .offcanvas-title{
+      img{
+        height:21px;
+      }
+    }
+    button{
+      background:none;
+      border:none;
+      font-size:20px;
+    }
+  }
+}
+
 #mobileNav {
   overflow-x: hidden;
   -webkit-transition: all 0.5s ease; 
@@ -46,17 +61,13 @@
         transform:rotate(180deg);
       }
       a{
-        color:#333333;
+        color:#000000;
         padding:20px 40px 20px 25px;
         display:block;
-        border-bottom:1px solid #d7d7d7;
-        text-transform:uppercase;
+        border-top:1px solid #000000;
         text-decoration:none;
-        font-size:14px;
-        &:hover{
-          background-color:#283583!important;
-          color:#ffffff;
-        }
+        font-size:16px;
+        font-weight:700;
       }
     }
   }

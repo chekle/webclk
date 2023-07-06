@@ -19,7 +19,8 @@ get_header(); ?>
 				<span></span>
 			</div>
 			<div class="text-overlay text-center">
-				<h1>webclk<br/>Web Development Blog</h1>
+				<h1>webclk</h1>
+				<h2>Web Development Blog</h2>
 			</div>
 		</div>
 		<?php if ( get_the_content() ) { ?>

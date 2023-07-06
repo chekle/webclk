@@ -50,7 +50,7 @@
 
   <!-- Mobile Nav -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMobileMenu" aria-labelledby="offcanvasMobileMenuLabel">
-    <div class="offcanvas-header">
+    <div class="offcanvas-header p-4">
       <h5 class="offcanvas-title" id="offcanvasMobileMenuLabel"><img src="<?php bloginfo('template_directory'); ?>/images/logo.svg"/></h5>
       <button type="button" class="text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-light fa-xmark"></i></button>
     </div>
