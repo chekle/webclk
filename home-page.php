@@ -38,7 +38,7 @@ get_header(); ?>
 		<?php $args = array(
 			'post_type' => 'post',
 			'orderby' => 'date',
-			'order' => 'ASC',
+			'order' => 'DESC',
 			'posts_per_page' => 9,
 		);
 		$query = new WP_Query( $args ); ?>
