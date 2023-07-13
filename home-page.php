@@ -7,20 +7,16 @@
 
 get_header(); ?>
 	<main>
-		<div class="bg-wrapper">
-			<div class="background">
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
+		<div class="bg-wrapper">			
+			<video class="background-video" autoplay="autoplay" autoplay playsinline loop muted id="myVideo">
+				<source src="<?php bloginfo('template_directory'); ?>/video/pexels-raddy-13522186.mp4" type="video/mp4">
+			</video>
+			<div class="overlay"></div>
 			<div class="text-overlay text-center">
-				<h1>webclk</h1>
-				<h2>Web Development Blog</h2>
+				<div class="typewriter">
+					<h1>webclk</h1>
+					<h2>Web Development Blog</h2>
+				</div>
 			</div>
 		</div>
 		<?php if ( get_the_content() ) { ?>
@@ -46,7 +42,7 @@ get_header(); ?>
 		<?php if ( $query->have_posts() ) { ?>
 			<div class="margin">
 				<div class="container">
-					<div class="row">
+					<div class="row g-5">
 						<?php while ( $query->have_posts() ) { $query->the_post(); ?>
 
 							<div class="col-12 col-sm-6 col-lg-4 blog-post-block" itemscope="" itemtype="http://schema.org/BlogPosting">

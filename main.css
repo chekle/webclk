@@ -453,6 +453,12 @@ a:active {
   padding-bottom: 22px;
   border-bottom: 1px solid #e4e4e4;
 }
+@media (max-width: 991px) {
+  #header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
 #header .col-12 {
   display: flex;
   justify-content: space-between;
@@ -460,6 +466,9 @@ a:active {
 }
 #header .col-12 .header-logo img {
   width: 90px;
+}
+#header .col-12 .navToggle {
+  font-size: 20px;
 }
 #header .main-menu ul {
   padding: 0;
@@ -507,8 +516,28 @@ a:active {
 }
 
 .bg-wrapper {
+  width: 100vw;
+  height: 600px;
   overflow: hidden;
+  background: #000000;
   position: relative;
+}
+@media (max-width: 991px) {
+  .bg-wrapper {
+    height: 220px;
+  }
+}
+.bg-wrapper .background-video {
+  width: 100%;
+}
+.bg-wrapper .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 8;
 }
 .bg-wrapper .text-overlay {
   position: absolute;
@@ -516,7 +545,7 @@ a:active {
   right: 0px;
   bottom: 0;
   left: 0;
-  z-index: 3;
+  z-index: 9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -539,123 +568,30 @@ a:active {
   margin: 0 0 0px 0;
 }
 
-.background {
-  width: 100vw;
-  height: 600px;
-  background: #000000;
-  position: relative;
+.typewriter h2 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
-@media (max-width: 991px) {
-  .background {
-    height: 300px;
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
-
-.background span {
-  width: 14vmin;
-  height: 14vmin;
-  border-radius: 14vmin;
-  backface-visibility: hidden;
-  position: absolute;
-  animation-name: move;
-  animation-duration: 6s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-.background span:nth-child(1) {
-  color: #6600FF;
-  top: 94%;
-  left: 15%;
-  animation-duration: 12.9s;
-  animation-delay: -8.2s;
-  transform-origin: 5vw -10vh;
-  box-shadow: 28vmin 0 3.8856971003vmin currentColor;
-}
-.background span:nth-child(2) {
-  color: #FFFFFF;
-  top: 48%;
-  left: 22%;
-  animation-duration: 11.7s;
-  animation-delay: -10.8s;
-  transform-origin: 20vw 11vh;
-  box-shadow: 28vmin 0 7.4630386113vmin currentColor;
-}
-.background span:nth-child(3) {
-  color: #00FF00;
-  top: 23%;
-  left: 62%;
-  animation-duration: 12.4s;
-  animation-delay: -6.5s;
-  transform-origin: -14vw -1vh;
-  box-shadow: -28vmin 0 7.0238271115vmin currentColor;
-}
-.background span:nth-child(4) {
-  color: #00FF00;
-  top: 47%;
-  left: 97%;
-  animation-duration: 13.5s;
-  animation-delay: -2.5s;
-  transform-origin: 15vw 15vh;
-  box-shadow: -28vmin 0 3.7913042712vmin currentColor;
-}
-.background span:nth-child(5) {
-  color: #00FF00;
-  top: 87%;
-  left: 51%;
-  animation-duration: 15.8s;
-  animation-delay: -5.4s;
-  transform-origin: 1vw -19vh;
-  box-shadow: -28vmin 0 9.0187088711vmin currentColor;
-}
-.background span:nth-child(6) {
-  color: #FFC0CB;
-  top: 57%;
-  left: 58%;
-  animation-duration: 12s;
-  animation-delay: -12s;
-  transform-origin: -22vw 8vh;
-  box-shadow: 28vmin 0 10.1625342932vmin currentColor;
-}
-.background span:nth-child(7) {
-  color: #FF6600;
-  top: 71%;
-  left: 95%;
-  animation-duration: 15.7s;
-  animation-delay: -15.7s;
-  transform-origin: -2vw -24vh;
-  box-shadow: -28vmin 0 4.7210245869vmin currentColor;
-}
-.background span:nth-child(8) {
-  color: #FF6600;
-  top: 91%;
-  left: 28%;
-  animation-duration: 10.3s;
-  animation-delay: -11.9s;
-  transform-origin: -8vw 25vh;
-  box-shadow: -28vmin 0 9.7439048495vmin currentColor;
-}
-.background span:nth-child(9) {
-  color: #0000FF;
-  top: 65%;
-  left: 89%;
-  animation-duration: 14.7s;
-  animation-delay: -7.3s;
-  transform-origin: 11vw 22vh;
-  box-shadow: -28vmin 0 8.5936111408vmin currentColor;
-}
-.background span:nth-child(10) {
-  color: #FFFFFF;
-  top: 23%;
-  left: 85%;
-  animation-duration: 11.2s;
-  animation-delay: -8.1s;
-  transform-origin: -3vw 4vh;
-  box-shadow: 28vmin 0 10.3994369677vmin currentColor;
-}
-
-@keyframes move {
-  100% {
-    transform: translate3d(0, 0, 1px) rotate(360deg);
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
   }
 }
 /* Mobile Nav

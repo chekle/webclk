@@ -16,7 +16,8 @@
           </div>
           <div class="right">
             <div class="social">
-              <a href="https://github.com/chekle/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/chekle/" target="_blank" rel="noopener noreferrer" class="me-3"><i class="fa-brands fa-github"></i></a>
+              <a href="https://gist.github.com/chekle" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-code"></i></a>
             </div>
           </div>
         </div>

@@ -31,6 +31,19 @@
   <![endif]-->
 
   <?php wp_head(); ?>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3CGNWV5V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9Y3CGNWV5V');
+</script>
+  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9287031434716065" crossorigin="anonymous"></script>
+  
 </head>
 
 <body <?php body_class(); ?>>
@@ -51,7 +64,7 @@
   <!-- Mobile Nav -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMobileMenu" aria-labelledby="offcanvasMobileMenuLabel">
     <div class="offcanvas-header p-4">
-      <h5 class="offcanvas-title" id="offcanvasMobileMenuLabel"><img src="<?php bloginfo('template_directory'); ?>/images/logo.svg"/></h5>
+      <h5 class="offcanvas-title" id="offcanvasMobileMenuLabel"><img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="webclk logo"/></h5>
       <button type="button" class="text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-light fa-xmark"></i></button>
     </div>
     <div class="offcanvas-body" id="mobileNav">

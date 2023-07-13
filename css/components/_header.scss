@@ -3,6 +3,10 @@
 #header{
   padding-top:22px;
   padding-bottom:22px;
+  @include mobile{
+    padding-top:10px;
+    padding-bottom:10px;
+  }
   border-bottom:1px solid $bravo;
   .col-12{
     display:flex;
@@ -12,6 +16,9 @@
       img{
         width:90px;
       }
+    }
+    .navToggle{
+      font-size: 20px;
     }
   }
   .main-menu{

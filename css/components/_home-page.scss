@@ -1,13 +1,31 @@
 .bg-wrapper{
-  overflow:hidden;
+  width: 100vw;
+  height: 600px;
+  @include mobile{
+    height: 220px;
+  }
+  overflow: hidden;
+  background: #000000;
   position: relative;
+  .background-video{
+    width:100%;
+  }
+  .overlay{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+    z-index:8;
+  }
   .text-overlay{
     position:absolute;
     top:0;
     right:0px;
     bottom:0;
     left:0;
-    z-index:3;
+    z-index:9;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -31,57 +49,24 @@
   }
 }
 
-.background {
-  width: 100vw;
-  height: 600px;
-  @include mobile{
-    height: 300px;
-  }
-  background: #000000;
-  position: relative;
+.typewriter h2 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 
-$particleSize: 14vmin;
-$animationDuration: 6s;
-$amount: 10;
-.background span {
-  width: $particleSize;
-  height: $particleSize;
-  border-radius: $particleSize;
-  backface-visibility: hidden;
-  position: absolute;
-  animation-name: move;
-  animation-duration: $animationDuration;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  $colors: (
-    //#ffffff,
-    //#ffffff,
-    #FFC0CB,
-    #0000FF,
-    #FFFF00,
-    #FF6600,
-    #00FF00,
-    #6600FF,
-    #FFFFFF
-  );
-  @for $i from 1 through $amount {
-    &:nth-child(#{$i}) {
-      color: nth($colors, random(length($colors)));
-      top: random(100) * 1%;
-      left: random(100) * 1%;
-      animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
-      animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
-      transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
-      $blurRadius: (random() + 0.5) * $particleSize * 0.5;
-      $x: if(random() > 0.5, -1, 1);
-      box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
-    }
-  }
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-@keyframes move {
-  100% {
-    transform: translate3d(0, 0, 1px) rotate(360deg);
-  }
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
 }
