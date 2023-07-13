@@ -12,12 +12,12 @@
       <div class="row">
         <div class="col-12 d-flex justify-content-between align-items-center">
           <div class="left">
-            <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg"/>
+            <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="webclk logo"/>
           </div>
           <div class="right">
             <div class="social">
-              <a href="https://github.com/chekle/" target="_blank" rel="noopener noreferrer" class="me-3"><i class="fa-brands fa-github"></i></a>
-              <a href="https://gist.github.com/chekle" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-code"></i></a>
+              <a href="https://github.com/chekle/" target="_blank" rel="noopener noreferrer" class="me-3" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+              <a href="https://gist.github.com/chekle" target="_blank" rel="noopener noreferrer" aria-label="Gists"><i class="fa-solid fa-code"></i></a>
             </div>
           </div>
         </div>

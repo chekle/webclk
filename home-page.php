@@ -58,7 +58,7 @@ get_header(); ?>
 									<?php if ( get_field('subheading') ) : ?>
 										<p class="mb-5"><?php echo get_field('subheading'); ?></p>
 									<?php endif; ?>
-									<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" itemprop="url"><strong>Read More</strong></a>
+									<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" itemprop="url" aria-label="<?php the_title(); ?>"><strong>Read More</strong></a>
 								</article>
 							</div>
 
