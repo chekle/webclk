@@ -54,7 +54,7 @@ get_header(); ?>
 											</div>
 										</div>
 									<?php } ?>
-									<h5><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" itemprop="url"><span itemprop="name headline"><?php the_title(); ?></span></a></h5>
+									<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" itemprop="url"><span itemprop="name headline"><?php the_title(); ?></span></a></h3>
 									<?php if ( get_field('subheading') ) : ?>
 										<p class="mb-5"><?php echo get_field('subheading'); ?></p>
 									<?php endif; ?>

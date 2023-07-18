@@ -418,6 +418,11 @@ a:active {
 .blog-post-block .blog-featured-image-wrapper .blog-featured-image:hover {
   transform: scale(1.03);
 }
+.blog-post-block h2, .blog-post-block h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 4vw, 2rem);
+}
 
 .facetwp-load-more {
   padding: 6px 30px;

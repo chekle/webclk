@@ -23,6 +23,11 @@
       }
     }
   }
+  h2, h3{
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 4vw, 2.0rem);
+  }
 }
 
 .facetwp-load-more{
