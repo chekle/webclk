@@ -1,0 +1,23 @@
+.content-cards{
+  .content-card{
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
+    @include mobile{
+      margin-top:60px;
+      margin-bottom:60px;
+    }
+    img{
+      height:100px;
+      width:auto;
+      margin-bottom:30px;
+    }
+    .button-wrapper{
+      margin-top:40px;
+    }
+    ul{
+      display:grid;
+      gap:15px;
+    }
+  }
+}

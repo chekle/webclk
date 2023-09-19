@@ -1,0 +1,20 @@
+.content-card-large{
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 5vw, 1.8rem);
+  img{
+    height:100px;
+    width:auto;
+    margin-bottom:30px;
+  }
+  .button-wrapper{
+    margin-top:40px;
+  }
+  ul{
+    display:grid;
+    @include desktop{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    gap:15px;
+  }
+}

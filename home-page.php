@@ -15,10 +15,13 @@ get_header(); ?>
 			<div class="text-overlay text-center">
 				<div class="typewriter">
 					<h1>webclk</h1>
-					<h2>Web Development Blog</h2>
+					<h2>Your web presence, my expertise.</h2>
 				</div>
 			</div>
 		</div>
+
+		<?php get_template_part('components/content_components'); ?>
+
 		<?php if ( get_the_content() ) { ?>
 			<div class="margin">
 				<div class="container">
